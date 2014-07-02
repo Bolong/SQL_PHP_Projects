@@ -1,0 +1,18 @@
+user:manager
+table own:employee
+table access without own: consumer,buyorder,return,product,purchaseorder,distributor,desitation,shippingcompany
+
+user:consumer_manager:
+table owned: consumer
+table access without own:buyorder,return,product,employee
+
+user:order_manager:
+table owned: buyorder,return,desitation,shippingcompany
+table access without own:consumer,product,employee
+
+user:purchase_manager:
+table owned: product,purchase_order,distributor
+table access without own:buyorder,return,employee
+
+SELECT *
+FROM ALL_TABLES WHERE OWNER='CONSUMER_MANAGER' 
