@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>User Register</title>
+  <style type="text/css">
+    html{font-size:12px;}
+	fieldset{width:520px; margin: 0 auto;}
+	legend{font-weight:bold; font-size:14px;}
+	label{float:left; width:70px; margin-left:10px;}
+	.left{margin-left:80px;}
+	.input{width:150px;}
+	span{color: #666666;}
+  </style>
+<script language=JavaScript>
+<!--
+
+function InputCheck(RegForm)
+{
+  if (RegForm.username.value == "")
+  {
+    alert("Username can not be blank");
+    RegForm.username.focus();
+    return (false);
+  }
+  if (RegForm.password.value == "")
+  {
+    alert("You have to set a password please");
+    RegForm.password.focus();
+    return (false);
+  }
+  if (RegForm.repass.value != RegForm.password.value)
+  {
+    alert("The two passwords are not same");
+    RegForm.repass.focus();
+    return (false);
+  }
+}
+
+//-->
+</script>
+</head>
+<div>
+<fieldset>
+<legend>Register</legend>
+<form name="RegForm" method="post" action="reg.php" onSubmit="return InputCheck(this)">
+<p>
+<label for="username" class="label">User Name:</label>
+<input id="username" name="username" type="text" class="input" />
+<span>(Required, Unchanged, 3-15 bytes include a-z,0-9 and _)</span>
+<p/>
+<p>
+<label for="firstname" class="label">First Name:</label>
+<input id="firstname" name="firstname" type="text" class="input" />
+<span>(Required)</span>
+<p/>
+<p>
+<label for="lastname" class="label">Last Name:</label>
+<input id="lastname" name="lastname" type="text" class="input" />
+<span>(Required)</span>
+<p/>
+<p>
+<label for="password" class="label">Password:</label>
+<input id="password" name="password" type="password" class="input" />
+<span>(Required and Must not less than 6 characters)</span>
+<p/>
+<p>
+<label for="repass" class="label">Confirm PW:</label>
+<input id="repass" name="repass" type="password" class="input" />
+<span>(Required, must be the same as Password)</span>
+<p/>
+<p>
+<label for="email" class="label">Email:</label>
+<input id="email" name="email" type="text" class="input" />
+<p/>
+<p>
+<label for="phone" class="label">Phone:</label>
+<input id="phone" name="phone" type="text" class="input" />
+<p/>
+<p>
+<input type="submit" name="submit" value="  Submit Registration " class="left" />
+</p>
+</form>
+</fieldset>
+</div>
+<body>
+</body>
+</html>
