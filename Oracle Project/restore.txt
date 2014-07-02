@@ -1,0 +1,5 @@
+echo off
+cd c:\xampp\mysql\bin
+mysqldump customers < C:\xampp\mysql\backup\customers\backup01
+echo "Process Complete"
+pause
